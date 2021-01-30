@@ -34,6 +34,21 @@ const tjConfig = {
     }
 };
 
+// Setting up the speaking skills
+tjConfig.speak = {
+    language: TJBot.LANGUAGES.SPEAK.SPANISH,
+    voice: 'es-ES_EnriqueV3Voice',
+    speakerDeviceId: 'plughw:2,0'
+};
+
+// Setting up the listening skill
+tjConfig.listen = {
+    microphoneDeviceId: 'plughw:2,0',
+    inactivityTimeout: -1,
+    backgroundAudioSuppression: 0.4,
+    language: TJBot.LANGUAGES.SPEAK.SPANISH,
+};
+
 // uncomment to change the pins for the LED
 // tjConfig.shine = {
 //     neopixel: {
