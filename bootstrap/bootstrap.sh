@@ -54,18 +54,6 @@ if ! grep -q "nameserver 9.9.9.9" /etc/resolv.conf; then
     echo "nameserver 149.112.112.112" | tee -a /etc/resolv.conf
 fi
 
-#----update raspberry
-echo ""
-echo "TJBot requires an up-to-date installation of your Raspberry Pi's operating"
-echo "system software. If you have never done this before, it can take up to an"
-echo "hour or longer."
-read -p "Proceed with apt-get dist-upgrade? [Y/n] " choice </dev/tty
-echo "Updating apt repositories [apt-get update]"
-apt-get update
-echo "Upgrading OS distribution [apt-get dist-upgrade]"
-apt-get -y dist-upgrade
-
-
 #----nodejs install
 echo ""
 RECOMMENDED_NODE_LEVEL="15"
@@ -154,7 +142,9 @@ else
 fi
 
 #----installing nodejs packages
+"Changing directory to install packages"
 cd Desktop/tjbot/recipes/conversation
+"Installing nodejs packages"
 npm install
 sudo node conversation.js
 
