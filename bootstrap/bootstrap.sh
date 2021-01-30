@@ -142,9 +142,9 @@ else
 fi
 
 #----installing nodejs packages
-"Changing directory to install packages"
+echo "Changing directory to install packages"
 cd Desktop/tjbot/recipes/conversation
-"Installing nodejs packages"
+echo "Installing nodejs packages"
 npm install
 sudo node conversation.js
 
